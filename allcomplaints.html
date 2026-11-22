@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HostelCare - All Complaints</title>
+  <link rel="stylesheet" href="allcomplaints.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand-box">
+      <div class="brand-title"><a href="index.html">HostelCare</a></div>
+      <div class="brand-tagline">Let's fix things together.</div>
+    </div>
+
+    <nav class="top-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="raise.html">Raise Complaint</a>
+        <a href="allcomplaints.html" class="active">All Complaints</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="heading-block">
+      <h1>All Complaints Tracker</h1>
+      <p>Search, filter by category or status, update progress, and track room complaints.</p>
+    </div>
+
+    <div class="filter-card">
+      <div class="filter-grid">
+        <div class="field">
+          <label for="searchInput">Search</label>
+          <input type="text" id="searchInput" placeholder="Search by ID, room number, or issue...">
+        </div>
+
+        <div class="field">
+          <label for="categoryFilter">Category</label>
+          <select id="categoryFilter">
+            <option value="All">All Categories</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Wi-Fi">Wi-Fi</option>
+            <option value="Cleaning">Cleaning</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="statusFilter">Status</label>
+          <select id="statusFilter">
+            <option value="All">All Status</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Resolved">Resolved</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <button type="button" id="clearFiltersBtn" class="btn-light">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="count-line" id="resultCount">Showing 0 complaints</p>
+
+    <div class="panel-card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Room No.</th>
+              <th>Category</th>
+              <th>Priority</th>
+              <th>Issue Description</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="complaintsTableBody"></tbody>
+        </table>
+      </div>
+      <p id="noDataMsg" class="empty-msg" style="display: none;">No matching complaints found.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>HostelCare Project | Made by Team Achievers</p>
+  </footer>
+
+  <script src="allcomplaints.js"></script>
+</body>
+</html>

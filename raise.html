@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HostelCare - Raise Complaint</title>
+  <link rel="stylesheet" href="raise.css">
+  <script src="raise.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand-box">
+      <div class="brand-title"><a href="index.html">HostelCare</a></div>
+      <div class="brand-tagline">Let's fix things together.</div>
+    </div>
+
+    <nav class="top-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="complaint-form.html" class="active">Raise Complaint</a>
+      <a href="allcomplaints.html">All Complaints</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="heading-block">
+      <h1 id="pageTitle">Raise Complaint</h1>
+      <p>Fill in your room and issue details to submit or update a complaint.</p>
+    </div>
+
+    <div id="alertBox" class="alert" style="display: none;"></div>
+
+    <form class="form-card" id="complaintForm" novalidate>
+      <input type="hidden" id="editComplaintId">
+
+      <div class="form-group">
+        <label for="studentName">Student Name</label>
+        <input type="text" id="studentName" placeholder="Enter your full name">
+        <small class="error-msg" id="nameError"></small>
+      </div>
+
+      <div class="two-col">
+        <div class="form-group">
+          <label for="roomNo">Room Number</label>
+          <input type="text" id="roomNo" placeholder="e.g., BH1-304">
+          <small class="error-msg" id="roomError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="regNo">Registration Number</label>
+          <input type="text" id="regNo" placeholder="e.g., 12608110">
+          <small class="error-msg" id="regError"></small>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category">
+            <option value="">Select category</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Wi-Fi">Wi-Fi</option>
+            <option value="Cleaning">Cleaning</option>
+          </select>
+          <small class="error-msg" id="categoryError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="priority">Priority</label>
+          <select id="priority">
+            <option value="">Select priority</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <small class="error-msg" id="priorityError"></small>
+        </div>
+      </div>
+
+      
+
+      <div class="form-group">
+        <label for="issueDesc">Issue Description</label>
+        <textarea id="issueDesc" rows="3" placeholder="Describe the room issue clearly (at least 10 characters)..."></textarea>
+        <small class="error-msg" id="issueError"></small>
+      </div>
+
+      <div class="btn-row">
+        <button type="submit" id="submitBtn" class="btn-main">Submit Complaint</button>
+        <button type="button" id="resetBtn" class="btn-light">Clear</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>HostelCare Project | Made by Team Achievers</p>
+  </footer>
+
+  <script src="raise.js"></script>
+</body>
+</html>
